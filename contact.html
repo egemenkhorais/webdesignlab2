@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Lab 2 Accessibility</title>
+  <style>
+    .skip-link { position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+    .skip-link:focus { position: static; width: auto; height: auto; background: #ffff00; padding: 10px; }
+    .helper-text { font-size: 0.85em; color: #555; display: block; margin-top: 4px; }
+  </style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header>
+  <h1>Contact Us</h1>
+</header>
+
+<nav aria-label="Main navigation">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<main id="main-content">
+  <section>
+    <h2>Get in Touch</h2>
+    <form action="#" method="post" aria-label="Contact form">
+
+      <fieldset>
+        <legend>Your Details</legend>
+        <p>
+          <label for="full-name">Full Name (required):</label>
+          <input type="text" id="full-name" name="full-name" required>
+        </p>
+        <p>
+          <label for="email">Email (required):</label>
+          <input type="email" id="email" name="email" required>
+        </p>
+        <p>
+          <label for="phone">Phone (optional):</label>
+          <input type="tel" id="phone" name="phone">
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Your Message</legend>
+        <p>
+          <label for="subject">Subject (required):</label>
+          <input type="text" id="subject" name="subject" required>
+        </p>
+        <p>
+          <label for="message">Message (required):</label>
+          <textarea id="message" name="message" required aria-describedby="msg-help"></textarea>
+          <span id="msg-help" class="helper-text">Please describe your inquiry in detail (min 20 characters).</span>
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>How did you hear about us?</legend>
+        <p>
+          <input type="radio" id="search" name="referral" value="search">
+          <label for="search">Search Engine</label>
+        </p>
+        <p>
+          <input type="radio" id="friend" name="referral" value="friend">
+          <label for="friend">From a Friend</label>
+        </p>
+        <p>
+          <input type="radio" id="social" name="referral" value="social">
+          <label for="social">Social Media</label>
+        </p>
+      </fieldset>
+
+      <p>
+        <button type="submit">Send Message</button>
+      </p>
+
+    </form>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; Egemen · Web Design Lab 2</p>
+</footer>
+
+</body>
+</html>
